@@ -104,16 +104,22 @@ func FresherCertificate(c1, c2 *Certificate, t time.Time) *Certificate {
 	c1Valid := c1.IsValid(t)
 	c2Valid := c1.IsValid(t)
 	if c1Valid {
+		log.Debugf("c1valid")
 		if c2Valid {
+			log.Debugf("c1valid c2valid")
 			if c2.Certificate.NotAfter.After(c1.Certificate.NotAfter) {
+				log.Debugf("c1valid c2valid return c2")
 				return c2
 			} else {
+				log.Debugf("c1valid c2valid return c1")
 				return c1
 			}
 		} else {
+			log.Debugf("c1valid c2 not valid")
 			return c1
 		}
 	} else {
+		log.Debugf("c1valid not valid")
 		if c2Valid {
 			return c2
 		} else {

@@ -8,6 +8,8 @@ import (
 	"errors"
 	"reflect"
 	"time"
+
+	"github.com/go-playground/log"
 )
 
 type Certificate struct {

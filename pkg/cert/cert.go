@@ -97,9 +97,9 @@ func IsValid(c *Certificate, t time.Time) bool {
 func FresherCertificate(c1, c2 *Certificate, t time.Time) *Certificate {
 
 	log.Debugf("c1.Certificate.NotAfter")
-	log.Debugf(c1.Certificate.NotAfter)
+	log.Debugf(c1.Certificate.NotAfter.String())
 	log.Debugf("c2.Certificate.NotAfter")
-	log.Debugf(c2.Certificate.NotAfter)
+	log.Debugf(c2.Certificate.NotAfter.String())
 
 	c1Valid := c1.IsValid(t)
 	c2Valid := c1.IsValid(t)
